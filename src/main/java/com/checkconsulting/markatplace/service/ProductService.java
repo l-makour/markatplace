@@ -24,7 +24,13 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    public ProductDto mapToProductDto(Product product){
+    public ProductDto getById(Integer id) {
+        if(productRepository.findById(id).isPresent())
+            return mapToProductDto(productRepository.findById(id).get());
+        else return null;
+    }
+
+    public ProductDto mapToProductDto(Product product) {
         return ProductDto.builder()
                 .id(product.getId())
                 .name(product.getName())
@@ -32,3 +38,4 @@ public class ProductService {
                 .build();
     }
 }
+

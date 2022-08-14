@@ -1,9 +1,7 @@
 package com.checkconsulting.markatplace.service;
 
 import com.checkconsulting.markatplace.entity.Customer;
-import com.checkconsulting.markatplace.entity.Product;
 import com.checkconsulting.markatplace.modelDto.CustomerDto;
-import com.checkconsulting.markatplace.modelDto.ProductDto;
 import com.checkconsulting.markatplace.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +22,12 @@ public class CustomerService {
                 .map(customer -> mapToCustomerDto(customer))
                 .collect(Collectors.toList());
     }
+    public CustomerDto getById(Integer id) {
 
+        if(customerRepository.findById(id).isPresent())
+        return mapToCustomerDto(customerRepository.findById(id).get());
+        else return null;
+    }
     public CustomerDto mapToCustomerDto(Customer customer){
         return CustomerDto.builder()
                 .id(customer.getId())
@@ -34,4 +37,6 @@ public class CustomerService {
                 .amount(customer.getAmount())
                 .build();
     }
+
+
 }

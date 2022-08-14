@@ -1,5 +1,6 @@
-package com.checkconsulting.markatplace;
+package com.checkconsulting.markatplace.product;
 
+import com.checkconsulting.markatplace.MarkatplaceApplication;
 import com.checkconsulting.markatplace.entity.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
