@@ -20,7 +20,7 @@ public class CustomerController {
 
 
     @GetMapping("/customers")
-    public ResponseEntity<List<CustomerDto>> getAllProduct(){
+    public ResponseEntity<List<CustomerDto>> getAllCustomers(){
         return ResponseEntity.ok(customerService.getAll());
     }
 
