@@ -23,4 +23,11 @@ public class CustomerControllerTestIT {
         Customer[] customers=restTemplate.getForObject("http://localhost:"+port+"/api/v1/customers",Customer[].class);
         Assertions.assertTrue(customers.length==4);
     }
+
+    @Test
+    public void itShouldReturnCustomerById(){
+
+        Customer customer=restTemplate.getForObject("http://localhost:"+port+"/api/v1/customer/1",Customer.class);
+        Assertions.assertNotNull(customer);
+    }
 }
