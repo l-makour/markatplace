@@ -17,7 +17,7 @@ node {
         }
 
         stage("deploy application") {
-
+          sh "sudo docker run --name marketplace -p 20000:9090 marketplace &"
         }
 
     }
