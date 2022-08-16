@@ -1,12 +1,22 @@
-node{
-    stage("checkout"){
+node {
+    stage("checkout") {
         checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/l-makour/marketplace.git']]])
     }
-    stage("build"){
+    stage("build") {
         sh "chmod 777 ./mvnw && ./mvnw clean package"
+        stash includes: 'target/*.jar', name: 'livrable'
+        stash includes: 'Dockerfile', name: 'Dockerfile'
 
     }
-    stage("test 3"){
+
+    node("vm-int") {
+        stage("build docker image") {
+
+        }
+
+        stage("deploy application") {
+
+        }
 
     }
 }
