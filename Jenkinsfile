@@ -11,7 +11,9 @@ node {
 
     node("vm-int") {
         stage("build docker image") {
-
+            unstash 'livrable'
+            unstash 'Dockerfile'
+            sh "sudo docker build -t marketplace ."
         }
 
         stage("deploy application") {
