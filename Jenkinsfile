@@ -18,8 +18,8 @@ node {
 
         stage("deploy application") {
             try{
-                sh "docker stop marketplace"
-                sh "docker rm marketplace"
+                sh "sudo docker stop marketplace"
+                sh "sudo docker rm marketplace"
                 sh "sudo docker run --name marketplace -p 20000:9090 marketplace &"
             }catch(Exception e){
                 sh "sudo docker run --name marketplace -p 20000:9090 marketplace &"
