@@ -25,7 +25,14 @@ node {
                         }
                 stage("build-image-docker")
                         {
-
+                          sh "sudo docker build -t marketplace ."
+                          sh "sudo docker tag marketplace lmakour/marketplace:1.0"
+                        }
+                stage("login-push-image")
+                        {
+                            sh "sudo docker build -t marketplace:1.0 ."
+                            sh "sudo docker login -u lmakour -p Med@sys01"
+                            sh "sudo docker push lmakour/marketplace:1.0"
                         }
             }
 
