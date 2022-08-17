@@ -1,8 +1,8 @@
-package com.checkconsulting.markatplace.service;
+package com.checkconsulting.marketplace.service;
 
-import com.checkconsulting.markatplace.entity.Product;
-import com.checkconsulting.markatplace.modelDto.ProductDto;
-import com.checkconsulting.markatplace.repository.ProductRepository;
+import com.checkconsulting.marketplace.entity.Product;
+import com.checkconsulting.marketplace.modelDto.ProductDto;
+import com.checkconsulting.marketplace.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

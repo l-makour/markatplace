@@ -1,9 +1,9 @@
-package com.checkconsulting.markatplace.product;
+package com.checkconsulting.marketplace.product;
 
-import com.checkconsulting.markatplace.entity.Product;
-import com.checkconsulting.markatplace.modelDto.ProductDto;
-import com.checkconsulting.markatplace.repository.ProductRepository;
-import com.checkconsulting.markatplace.service.ProductService;
+import com.checkconsulting.marketplace.entity.Product;
+import com.checkconsulting.marketplace.modelDto.ProductDto;
+import com.checkconsulting.marketplace.repository.ProductRepository;
+import com.checkconsulting.marketplace.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
