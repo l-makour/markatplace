@@ -34,6 +34,11 @@ node {
                             sh "sudo docker login -u lmakour -p Med@sys01"
                             sh "sudo docker push lmakour/marketplace:1.0"
                         }
+                stage("pull-run-image")
+                        {
+                            sh "sudo docker pull lmakour/marketplace:1.0"
+                            sh "sudo docker run --name marketplacelma -p 8080:8080 -d lmakour/marketplace:1.0"
+                        }
             }
 
 }
