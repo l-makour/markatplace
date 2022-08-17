@@ -63,7 +63,7 @@ public class CustomerServiceTest {
         CustomerNotFoundException exception= Assertions.assertThrows(CustomerNotFoundException.class,()->customerService.getById(2));
 
         //then
-        Assertions.assertEquals(exception.getMessage(),"Customer id 3 not fount");
+        Assertions.assertEquals(exception.getMessage(),"Customer id 2 not fount");
     }
 
 }
