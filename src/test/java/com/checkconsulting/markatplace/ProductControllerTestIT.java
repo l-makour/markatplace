@@ -18,6 +18,6 @@ public class ProductControllerTestIT {
     @Test
     public void itShouldReturnAllProducts(){
         Product[] products= restTemplate.getForObject("http://localhost:"+port+"/api/v1/products", Product[].class);
-        Assertions.assertTrue(products.length==4);
+        Assertions.assertEquals(products.length, 6);
     }
 }
