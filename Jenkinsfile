@@ -14,7 +14,7 @@ node {
         sh "chmod 777 ./mvnw && ./mvnw -DskipTests=true clean package"
     }
 
-    node("vm-int")
+    node("vm-int-lma")
             {
                 stage("test")
                         {
