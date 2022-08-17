@@ -16,9 +16,16 @@ node {
 
     node("vm-int-lma")
             {
-                stage("test")
+                stage("copy-files")
                         {
-                            sh "ls"
+                            stash includes: 'target/**.jar', name: 'livrable'
+                            stash includes: 'Dockerfile', name: 'Dockerfile'
+                            unstash 'livrable'
+                            unstash 'Dockerfile'
+                        }
+                stage("build-image-docker")
+                        {
+
                         }
             }
 
