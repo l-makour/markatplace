@@ -29,7 +29,7 @@ node {
                 sh 'sudo docker run --name mp -p 8081:9090 -d sbenbelkacem/mp:1.0'
 
             } catch (Exception e) {
-                sh 'sudo docker run --name mp -p 8081:9090 -d sbenbelkacem/mp:1.0'
+                sh 'sudo docker run --name mp -p 8081:9090 -e SPRING_PROFILES_ACTIVE=prd -d sbenbelkacem/mp:1.0'
             }
 
         }
