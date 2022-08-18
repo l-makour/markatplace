@@ -1,7 +1,7 @@
-package com.checkconsulting.markatplace.controller;
+package com.checkconsulting.marketplace.controller;
 
-import com.checkconsulting.markatplace.modelDto.ProductDto;
-import com.checkconsulting.markatplace.service.ProductService;
+import com.checkconsulting.marketplace.modelDto.ProductDto;
+import com.checkconsulting.marketplace.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

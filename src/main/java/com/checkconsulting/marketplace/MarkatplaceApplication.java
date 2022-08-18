@@ -1,4 +1,4 @@
-package com.checkconsulting.markatplace;
+package com.checkconsulting.marketplace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

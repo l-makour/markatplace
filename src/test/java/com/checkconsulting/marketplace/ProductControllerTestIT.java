@@ -1,6 +1,6 @@
-package com.checkconsulting.markatplace;
+package com.checkconsulting.marketplace;
 
-import com.checkconsulting.markatplace.entity.Product;
+import com.checkconsulting.marketplace.entity.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.checkconsulting.markatplace;
+package com.checkconsulting.marketplace;
 
 
 import org.junit.jupiter.api.Assertions;

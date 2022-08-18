@@ -1,6 +1,6 @@
-package com.checkconsulting.markatplace.repository;
+package com.checkconsulting.marketplace.repository;
 
-import com.checkconsulting.markatplace.entity.Customer;
+import com.checkconsulting.marketplace.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.checkconsulting.markatplace.configuration;
+package com.checkconsulting.marketplace.configuration;
 
 
 import org.springframework.context.annotation.Bean;

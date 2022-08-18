@@ -1,7 +1,7 @@
-package com.checkconsulting.markatplace.controller;
+package com.checkconsulting.marketplace.controller;
 
-import com.checkconsulting.markatplace.modelDto.CustomerDto;
-import com.checkconsulting.markatplace.service.CustomerService;
+import com.checkconsulting.marketplace.modelDto.CustomerDto;
+import com.checkconsulting.marketplace.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

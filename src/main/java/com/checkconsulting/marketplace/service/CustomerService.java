@@ -1,10 +1,8 @@
-package com.checkconsulting.markatplace.service;
+package com.checkconsulting.marketplace.service;
 
-import com.checkconsulting.markatplace.entity.Customer;
-import com.checkconsulting.markatplace.entity.Product;
-import com.checkconsulting.markatplace.modelDto.CustomerDto;
-import com.checkconsulting.markatplace.modelDto.ProductDto;
-import com.checkconsulting.markatplace.repository.CustomerRepository;
+import com.checkconsulting.marketplace.entity.Customer;
+import com.checkconsulting.marketplace.modelDto.CustomerDto;
+import com.checkconsulting.marketplace.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.checkconsulting.markatplace.controller;
+package com.checkconsulting.marketplace.controller;
 
 
 import org.springframework.beans.factory.annotation.Value;
