@@ -1,4 +1,7 @@
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     username: sa
     url: jdbc:h2:mem:testdb
@@ -17,6 +20,8 @@ server:
 
 
 env: local
+
+
 
 
 
