@@ -1,5 +1,6 @@
-package com.checkconsulting.marketplace;
+package com.checkconsulting.marketplace.product;
 
+import com.checkconsulting.marketplace.MarkatplaceApplication;
 import com.checkconsulting.marketplace.entity.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
-@SpringBootTest(classes = MarkatplaceApplication.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = MarkatplaceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProductControllerTestIT {
     @LocalServerPort
     Integer port;
@@ -16,8 +17,8 @@ public class ProductControllerTestIT {
     TestRestTemplate restTemplate;
 
     @Test
-    public void itShouldReturnAllProducts(){
-        Product[] products= restTemplate.getForObject("http://localhost:"+port+"/api/v1/products", Product[].class);
-        Assertions.assertEquals(products.length, 6);
+    public void itShouldReturnAllProducts() {
+        Product[] products = restTemplate.getForObject("http://localhost:" + port + "/api/v1/products", Product[].class);
+        Assertions.assertEquals(4, products.length);
     }
 }
