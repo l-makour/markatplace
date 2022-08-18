@@ -3,7 +3,7 @@ spring:
     username: sa
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
-    password: ${data_base_password}
+    password: password
   h2:
     console:
       enabled: 'true'

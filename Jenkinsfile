@@ -1,12 +1,6 @@
 node {
 
-    environment {
-        AWS_ACCESS_KEY     = credentials('test')
-    }
-
-
     stage('checkout') {
-        println "$AWS_ACCESS_KEY"
         checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/l-makour/marketplace.git']]]);
     }
     stage('unit-test') {
@@ -14,6 +8,13 @@ node {
     }
     stage('integ-test') {
         sh './mvnw test -P failsafe'
+    }
+
+    stage('quality analyses'){
+        sh './mvnw sonar:sonar \\\n' +
+                '  -Dsonar.projectKey=ecom-success \\\n' +
+                '  -Dsonar.host.url=http://3.84.57.213:10003 \\\n' +
+                '  -Dsonar.login=632757c79f4f6fe5a226ca34dc81eee59bb61fac'
     }
     stage('build') {
         sh './mvnw clean package -DskipTests'
