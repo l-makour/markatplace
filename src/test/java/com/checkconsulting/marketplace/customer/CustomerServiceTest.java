@@ -1,7 +1,7 @@
 package com.checkconsulting.marketplace.customer;
 
 import com.checkconsulting.marketplace.entity.Customer;
-import com.checkconsulting.marketplace.exceptions.CustomerNotFoundException;
+import com.checkconsulting.marketplace.exceptions.NotFoundException;
 import com.checkconsulting.marketplace.modelDto.CustomerDto;
 import com.checkconsulting.marketplace.repository.CustomerRepository;
 import com.checkconsulting.marketplace.service.CustomerService;
@@ -22,7 +22,7 @@ public class CustomerServiceTest {
     CustomerRepository customerRepository;
 
     @Test
-    public void itShouldReturnCustomerById() throws CustomerNotFoundException {
+    public void itShouldReturnCustomerById() throws NotFoundException {
         //given
         Customer customer =Customer.builder()
                 .id(1)
@@ -46,7 +46,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    public void itShouldReturnCustomerByIdNotFound() throws CustomerNotFoundException {
+    public void itShouldReturnCustomerByIdNotFound() throws NotFoundException {
         //given
         Customer customer =Customer.builder()
                 .id(1)
@@ -60,7 +60,7 @@ public class CustomerServiceTest {
 
         //when
         CustomerService customerService =new CustomerService(customerRepository);
-        CustomerNotFoundException exception= Assertions.assertThrows(CustomerNotFoundException.class,()->customerService.getById(2));
+        NotFoundException exception= Assertions.assertThrows(NotFoundException.class,()->customerService.getById(2));
 
         //then
         Assertions.assertEquals(exception.getMessage(),"Customer id 2 not fount");

@@ -3,7 +3,7 @@ package com.checkconsulting.marketplace.customer;
 import com.checkconsulting.marketplace.MarkatplaceApplication;
 import com.checkconsulting.marketplace.entity.Customer;
 import com.checkconsulting.marketplace.enums.ResponseStatus;
-import com.checkconsulting.marketplace.utils.CustomResponse;
+import com.checkconsulting.marketplace.utils.ResponseGeneric;
 import com.checkconsulting.marketplace.modelDto.CustomerDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -33,16 +33,16 @@ public class CustomerControllerTestIT {
     @Test
     public void itShouldReturnCustomerById() {
         String url = "http://localhost:" + port + "/api/v1/customer/1";
-        CustomResponse<CustomerDto> response = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<CustomResponse<CustomerDto>>() {}).getBody();
+        ResponseGeneric<CustomerDto> response = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<ResponseGeneric<CustomerDto>>() {}).getBody();
         Assertions.assertEquals(response.getResponseStatus(), ResponseStatus.Ok);
         Assertions.assertEquals(response.getErrorMessage(), "");
-        Assertions.assertEquals(response.getCustomDto().getId(), 1);
+        Assertions.assertEquals(response.getDto().getId(), 1);
 
         String url1 = "http://localhost:" + port + "/api/v1/customer/6";
-        CustomResponse<CustomerDto> response1 = restTemplate.exchange(url1, HttpMethod.GET, null, new ParameterizedTypeReference<CustomResponse<CustomerDto>>() {}).getBody();
+        ResponseGeneric<CustomerDto> response1 = restTemplate.exchange(url1, HttpMethod.GET, null, new ParameterizedTypeReference<ResponseGeneric<CustomerDto>>() {}).getBody();
         Assertions.assertEquals(response1.getResponseStatus(), ResponseStatus.Ko);
         Assertions.assertEquals(response1.getErrorMessage(), "Customer id 6 not fount");
-        Assertions.assertNull(response1.getCustomDto());
+        Assertions.assertNull(response1.getDto());
 
     }
 }

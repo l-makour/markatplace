@@ -1,6 +1,7 @@
 package com.checkconsulting.marketplace.product;
 
 import com.checkconsulting.marketplace.entity.Product;
+import com.checkconsulting.marketplace.exceptions.NotFoundException;
 import com.checkconsulting.marketplace.modelDto.ProductDto;
 import com.checkconsulting.marketplace.repository.ProductRepository;
 import com.checkconsulting.marketplace.service.ProductService;
@@ -18,7 +19,7 @@ public class ProductServiceTest {
     ProductRepository productRepository;
 
     @Test
-    public void itShouldReturnProductById(){
+    public void itShouldReturnProductById() throws NotFoundException {
         //given
         Product product =Product.builder()
                 .id(1)

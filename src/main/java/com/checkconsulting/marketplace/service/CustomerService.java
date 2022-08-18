@@ -1,7 +1,7 @@
 package com.checkconsulting.marketplace.service;
 
 import com.checkconsulting.marketplace.entity.Customer;
-import com.checkconsulting.marketplace.exceptions.CustomerNotFoundException;
+import com.checkconsulting.marketplace.exceptions.NotFoundException;
 import com.checkconsulting.marketplace.modelDto.CustomerDto;
 import com.checkconsulting.marketplace.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
@@ -24,11 +24,11 @@ public class CustomerService {
                 .map(customer -> mapToCustomerDto(customer))
                 .collect(Collectors.toList());
     }
-    public CustomerDto getById(Integer id) throws CustomerNotFoundException {
+    public CustomerDto getById(Integer id) throws NotFoundException {
         Optional<Customer> customerDto =customerRepository.findById(id);
         if(customerDto.isPresent())
         return mapToCustomerDto(customerRepository.findById(id).get());
-        throw new CustomerNotFoundException("Customer id "+id+" not fount");
+        throw new NotFoundException("Customer id "+id+" not fount");
     }
     public CustomerDto mapToCustomerDto(Customer customer){
         return CustomerDto.builder()

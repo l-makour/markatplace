@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CustomResponse <T>{
-    T customDto;
+public class ResponseGeneric<T>{
+    T Dto;
     String errorMessage;
     ResponseStatus responseStatus;
 }

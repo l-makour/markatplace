@@ -1,8 +1,8 @@
 package com.checkconsulting.marketplace.controller;
 
 import com.checkconsulting.marketplace.enums.ResponseStatus;
-import com.checkconsulting.marketplace.exceptions.CustomerNotFoundException;
-import com.checkconsulting.marketplace.utils.CustomResponse;
+import com.checkconsulting.marketplace.exceptions.NotFoundException;
+import com.checkconsulting.marketplace.utils.ResponseGeneric;
 import com.checkconsulting.marketplace.modelDto.CustomerDto;
 import com.checkconsulting.marketplace.service.CustomerService;
 import org.springframework.http.ResponseEntity;
@@ -29,20 +29,20 @@ public class CustomerController {
     }
 
     @GetMapping("customer/{id}")
-    public ResponseEntity<CustomResponse<CustomerDto>> getCustomerById(@PathVariable Integer id) {
+    public ResponseEntity<ResponseGeneric<CustomerDto>> getCustomerById(@PathVariable Integer id) {
 
-       CustomResponse<CustomerDto> customerDtoCustomResponse;
+       ResponseGeneric<CustomerDto> customerDtoCustomResponse;
        try {
            CustomerDto customerDto=customerService.getById(id);
-           customerDtoCustomResponse = CustomResponse.<CustomerDto>builder()
-                   .customDto(customerDto)
+           customerDtoCustomResponse = ResponseGeneric.<CustomerDto>builder()
+                   .Dto(customerDto)
                    .errorMessage("")
                    .responseStatus(ResponseStatus.Ok)
                    .build();
 
-       }catch (CustomerNotFoundException e)
+       }catch (NotFoundException e)
        {
-           customerDtoCustomResponse = CustomResponse.<CustomerDto>builder()
+           customerDtoCustomResponse = ResponseGeneric.<CustomerDto>builder()
                    .errorMessage(e.getMessage())
                    .responseStatus(ResponseStatus.Ko)
                    .build();
