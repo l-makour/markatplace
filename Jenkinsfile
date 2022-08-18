@@ -1,5 +1,12 @@
 node {
+
+    environment {
+        AWS_ACCESS_KEY     = credentials('test')
+    }
+
+
     stage('checkout') {
+        println AWS_ACCESS_KEY
         checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/l-makour/marketplace.git']]]);
     }
     stage('unit-test') {
